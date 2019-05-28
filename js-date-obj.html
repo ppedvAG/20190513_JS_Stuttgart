@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Datum Objekt</title>
+</head>
+<body>
+
+    <!-- (h3{$. Methode}+p{RW: }+p#out$)*10 -->
+    <h3>1. Datum Objekt </h3>
+    <p id="out1"></p>
+
+    <h3>2. Methode getDate()</h3>
+    <p>RW: </p>
+    <p id="out2"></p>
+
+    <h3>3. Methode getDay()</h3>
+    <p id="out3"></p>
+
+    <h3>4. Methode getTime()</h3>
+    <p id="out4"></p>
+
+    <h3>5. Methode getFullYear()</h3>
+    <p id="out5"></p>
+
+    <h3>6. Methode getMonth()</h3>
+    <p id="out6"></p>
+
+    <h3>7. Methode toTimeString()</h3>
+    <p id="out7"></p>
+
+    <h3>8. Methode toLocaleTimeString()</h3>
+    <p id="out8"></p>
+
+    <hr>
+
+    <h3>Übung Digitaluhr</h3>
+    <p id="out9"></p>
+
+    <h3>10. Methode</h3>
+    <p id="out10"></p>
+
+
+    <script>
+        /* nur mit Konstruktor */
+        let d = new Date();
+        out1.textContent = d;
+
+        out2.textContent = d.getDate();
+        out3.textContent = d.getDay();
+        out4.textContent = d.getTime();
+        out5.textContent = d.getFullYear();
+        out6.textContent = d.getMonth();
+        out7.textContent = d.toTimeString();
+        out8.textContent = d.toLocaleTimeString();
+
+        function tick(){
+            let dt = new Date();            
+            dt = dt.toLocaleTimeString();
+            out9.textContent = dt;
+        }
+        setInterval("tick()",1000);
+        
+    </script>
+    
+</body>
+</html>

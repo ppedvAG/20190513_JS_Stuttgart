@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulare</title>
+    <style>
+    #inpRange{
+        width: 300px;
+    }    
+    </style>
+</head>
+
+<body>
+  
+
+    <!-- action="checkForm.php" -->
+    <form action="#">
+
+        <!-- (div>label+input[id="" name=""])*16 -->
+        <p>über for="" bei label und id="" bei input sind diese zwei Elemente verbunden</p>
+        <h3>fieldset zum Gruppieren von inputs</h3>
+        <fieldset>
+            <legend>NAME</legend>
+            <div><label for="fname">VORNAME</label><input type="text" id="fname" name="" placeholder="Max"></div>
+            <div><label for="lname">NACHNAME</label><input type="text" id="lname" name="" placeholder="Mustermann">
+            </div>
+        </fieldset>
+
+        <h3>min max & try catch</h3>
+        <h3>Marathonanmeldung</h3>
+        <p>buttons in forms haben automatisch type="submit"</p>
+        <p>wenn type="number", bei Eingabe von Buchstaben value ist leer, auch in Chrome</p>
+        <div>
+            <label for="inpAge">Ihr Alter: </label>
+            <input type="number" id="inpAge" min="1" max="113" name="">
+            <button type="button" onclick="trycatch()">OK</button>
+            <!-- <input type="button" value="OK"> -->
+            <p id="outpAge"></p>
+        </div>
+
+        <h3>input type color</h3>
+        <div><label for="inpColor">FARBE</label><input type="color" id="inpColor" name=""></div>
+
+        <h3>input type date</h3>
+        <div><label for="inpDate">DATUM</label><input type="date" id="inpDate" name=""></div>
+
+        <h3>input type radio</h3>
+        <p>mit attr name="" sind beide inputs verbunden</p>
+        <div><label for="inpWom">FRAU</label><input type="radio" id="inpWom" name="inpGender"></div>
+        <div><label for="inpMan">HERR</label><input type="radio" id="inpMan" name="inpGender"></div>
+
+        <h3>input type checkbox</h3>
+        <h4>Pizza Extras</h4>
+        <div><label for="cheese">Käse</label><input type="checkbox" id="cheese" name="inpCB"></div>
+        <div><label for="salami">Salami</label><input type="checkbox" id="salami" name="inpCB"></div>
+        <div><label for="mushrooms">Pilze</label><input type="checkbox" id="mushrooms" name="inpCB"></div>
+        <div><label for="pineapple">Ananas</label><input type="checkbox" id="pineapple" name="inpCB"></div>
+        <button type="button" onclick="makePizza()">OK</button>
+        <p id="outpPizza"></p>
+
+        <h3>input type range</h3>
+        <h4>Hotelzimmerpreis</h4>
+        <div>
+            <label for="inpRange">Hotelpreis</label>
+            <input type="range" id="inpRange" name="" min="20" max="200" step="5" value="70" oninput="showPrice()">
+            <p id="outpPrice"></p>
+        </div>
+
+        <h3>TelNr</h3>
+        <input type="text" pattern="\+49\d{9,11}">
+    </form>
+
+    <script>
+
+        function trycatch() {
+            let inpValue = inpAge.value;
+            console.log("inpValue: " + inpValue);
+            /* if (isNaN(inpValue)) {
+                //immer not a number, weil aus dem Browser alles als string kommt
+                console.log("isNaN(inpValue)");
+            } else {
+                console.log("else");
+            } */
+            let err;
+            /* SYNTAX: try { if () throw ""} catch (error) {} finally {} */
+            try {
+                if (inpValue < 0) throw "Sie haben eine neg. Zahl eingegeben";
+                if (inpValue > 0 && inpValue <= 7) throw "Zur Teilnahme noch nicht berechtigt";
+                /* (bedingung || bedingung) */
+                /* (!bedingung) */
+                /* beim gültigen Alter keine Fehler */
+                /* > 70 */
+                if (inpValue == "") throw "keine Zahl";
+            } catch (err) {
+                outpAge.textContent = "Meldung von error: " + err;
+                this.err = err;
+            } finally {
+                /* if 8 u 16 */
+                /* 16 u 55 */
+                /* 55 u 70 */
+                if (this.err) {
+                    inpAge.value = "";
+                    this.err = "";
+                } else {
+                    setTimeout("outpAge.textContent = 'Willkommen beim Marathon';", 2000);
+                }
+            }
+        }
+
+        function makePizza() {
+            let checkBoxArray = document.getElementsByName("inpCB");
+            for (let el of checkBoxArray) {
+                outpPizza.innerHTML += "input " + el.id + " is checked? " + el.checked + "<br>";
+            }
+        }
+
+        function showPrice(){
+            outpPrice.textContent = "min Preis: " + inpRange.min +
+             " ausgewählter Preis: " + inpRange.value +
+             " max Preis: " + inpRange.max;
+
+        }
+        showPrice();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Schlüsselwörter let & var</title>
+</head>
+<body>
+
+
+    <script>
+        /* deklarieren */
+        var v;
+        let l;
+
+        /* initialisieren */
+        v = 4;
+        l = 5;
+
+        /* redeklarieren */
+        var v = 6;
+        //let l = 7;//wirft Fehler auf. Redeklarieren verboten
+        //var l = 7; //dasselbe
+
+        /* window object */
+        console.log(window.v); //6
+        console.log(window.l); //undifined. let-Variablen sind keine Eigenschaften von Objekt window
+
+        /* scope von var */
+        var a = 2;
+        console.log("var a vor {}: " + a);//2
+        {
+            var a = 3;
+            console.log("var a in {}: " + a); //3
+        }
+        console.log("var a nach {}: " + a); //3
+
+
+        /* scope von let */
+        let b = 4;
+        console.log("let b vor {}: " + b);//4
+        {
+            let b = 6;
+            console.log("let b in {}: " + b); //6 
+            //let hat zusätzlichen Gültigkeitsbereich, nämlich die {}
+        }
+        console.log("let b nach {}: " + b); //4
+
+        /* globale Variablen, ohne Schlüsselwort */
+        /* siehe js-dom-window-obj.html, demonstrateSetInterval() */
+        /* Frage f. mich: unterschiede zw. var und ohne Schlüsselwort */
+
+
+        
+        
+       
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Grundlagen</title>
+</head>
+<body>
+
+    <p id="output"></p>
+    <button id="btn" onclick="makeRed()">RED</button>
+
+    <div><label for=""></label><input type="text" id="" name=""></div>
+    <!-- Hinweis: Leerer String an getElementById() übergeben. -->
+
+    <script>
+
+        let a;
+        let b;
+        a = 4;
+        b = "5";
+
+        let c = a + b;
+        console.log("let c: " + c); //45
+        console.log("typeof c: " + typeof c); //string
+
+        document.getElementById("output").textContent = "let c: " + c;
+        /* let myOutput = document.getElementById("output");
+        myOutput.textContent =  */
+        /* für Elemente mit ID werden automatisch Variablen angelegt: */
+        output.textContent = "let c again: " + c
+        
+
+
+        /* output ist ein Objekt */
+        console.log(output)
+        
+        function makeRed(){
+            /* Zugriff auf einzelne Eigenschaften vom Ojbekt */
+            output.style.color = "red";
+            btn.style.backgroundColor = "yellow";
+
+
+        }
+
+
+
+
+
+        
+        </script>
+    
+</body>
+</html>

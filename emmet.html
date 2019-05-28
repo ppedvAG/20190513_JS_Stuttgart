@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emmet</title>
+    <style>        
+        h1 {
+            /* bcc - background-color */
+            /* ff - font-family */
+            /* pos:a pos:r pos:s - position absolut usw. */    
+            color: black;        
+        }
+    </style>
+
+    <h1>header in head</h1>
+</head>
+<body>
+   
+    <h1>EMMET</h1>
+    <a href="http:emmet.io">Link zur Plugin-Webseite</a>
+    <p>Leerzeichen erlaubt nur innerhalb {}</p>
+
+    <!-- Eltern-Kind-Elemente -->
+    <!-- div>h1 -->
+    <div>
+        <h1></h1>
+    </div>
+
+    <!-- Wiederholung von Elementen -->
+    <!-- div>div*3 -->
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Id & Nummerierung -->
+    <!-- div#container>div#item$*3 -->
+    <div id="container">
+        <div id="item1"></div>
+        <div id="item2"></div>
+        <div id="item3"></div>
+    </div>
+
+    <!-- Attribute -->
+    <!-- quadratische -->
+    <!-- button[onclick="myFunction()"]*3 -->
+    <button onclick="myFunction()"></button>
+    <button onclick="myFunction()"></button>
+    <button onclick="myFunction()"></button>
+    <!-- img[src="http://picsum.photos/200/?random$"]*3 --> 
+    <img src="http://picsum.photos/200/?random1" alt="ein Bild">
+    <img src="http://picsum.photos/200/?random2" alt="ein Bild">
+    <img src="http://picsum.photos/200/?random3" alt="ein Bild">
+
+    <!-- text / Inhalt -->
+    <!-- geschweifte -->
+    <!-- button[onclick="myFunction()"]{OK}*3 -->
+    <button onclick="myFunction()">OK</button>
+    <button onclick="myFunction()">OK</button>
+    <button onclick="myFunction()">OK</button>
+
+    (input:email+{${newline}}+input:tel)*4
+
+
+    p*4>lorem
+
+    ul.generic-list>lorem10.item*4
+
+    Frage: linebreak in emmet?
+
+    
+    
+</body>
+</html>

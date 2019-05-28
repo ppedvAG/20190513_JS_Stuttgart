@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Funktionen</title>
+</head>
+<body>
+<!-- (h3{$. Funktion}+button[onclick=""]{demonstrate}+hr)*6 -->
+<h3>1. benannte Funktion ohne Argumente</h3>
+<button onclick="myFunction1()">demonstrate</button>
+<p id="out1"></p>
+
+<h3>2. benannte Funktion mit einem Argument</h3>
+<p>Argumente stehen in runden Klammern - im Ausführungsoperator</p>
+<p>button anders färben</p>
+<button onclick="myFunction2(this)">demonstrate</button>
+
+<h3>3. Übung- benannte Funktion mit einem Argument</h3>
+<p>Fkt aus Bsp.1 in eine Argument-Fkt umwandeln</p>
+<p>Ziel ist der gleiche: im Par. irgendwas ausgeben</p>
+<button onclick="myFunction3(out3)">demonstrate</button>
+<p id="out3"></p>
+
+<h3>4. definierte Argumentfunktion mit anderem Argument verwenden</h3>
+<button onclick="myFunction3(out4)">demonstrate</button>
+<p id="out4"></p>
+
+<h3>5. Funktion mit einem Rückgabewert</h3>
+<p>Die Fkt führt ihre Anweisungen aus und zusätzlich gibt irgndwas zurück</p>
+<button onclick="demonstrateMyFunction5()">demonstrate</button>
+<p id="par5">Rückgabe von Funktion <span id="out5"></span></p>
+
+<h3>6. Übung </h3>
+<h4>Funktion mit einem Rückgabewert und zwei Argumenten</h4>
+<p>Die Fkt soll zwei Argumente addieren und Resultat wird zurückgegeben</p>
+<p>Argumente kommen über inputs rein</p>    
+<button onclick="">demonstrate</button>
+<hr>
+<h3>7. Funktion, der eine Funktion als Argument übergeben wird</h3>
+<hr>
+<h3>8. Rekursive Funktionen</h3>
+<p>Funktionen, die sich selbst aufrufen</p>
+
+<script>
+    function myFunction1(){
+        out1.textContent = "myFunction1() aus Bsp.1 funktioniert";
+    }
+    function myFunction2(btn){
+        btn.style.backgroundColor = "greenyellow";
+    }
+    function myFunction3(out3){
+        console.log(out3);
+        out3.textContent = "myFunction3() funktioniert";
+    }
+    /* function myFunction3(el3){
+        console.log(el3);
+        el3.textContent = "myFunction3() funktioniert";
+    } */
+    function myFunction5(){
+        par5.style.color = "magenta";
+        return "erfolg";
+    }
+    function demonstrateMyFunction5(){
+        /* Fkt wird aufgerufen, ihre Anweisungen werden ausgeführt */
+        /* und es entsteht auch ein Rückgabewert */
+        /* diesen geben wir in out5 aus */    
+        out5.textContent = myFunction5();
+    }
+
+
+</script>
+
+    
+</body>
+</html>

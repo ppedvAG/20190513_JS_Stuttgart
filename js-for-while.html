@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Loops Schleifen</title>
+</head>
+<body>
+    <h3>Bsp for(){}</h3>
+    <p id="outp"></p>
+    <h3>Bsp for(){} mit if(){}</h3>
+    <p id="outp2"></p>
+    <p id="outp3"></p>
+    <p id="outp4"></p>
+    
+
+
+    <script>
+        var cities = ["Stuttgart", "Köln", "Berlin", "Dortmund"];
+
+        /* for(Iteratorinitialisierung; Bedingung; Iteratoraktualisierung){
+            Anweisung1;
+            Anweisung2;
+            ...
+        } */
+
+        for(let i = 0; i < cities.length; i=i+1){
+            let value = cities[i];
+            value = value + " ist schön";
+            cities[i] = value;
+        }
+        outp.textContent = cities;
+        console.log(cities);
+
+
+        /* Bsp mit if(){} */
+        var cities = ["Stuttgart", "Köln", "Berlin", "Dortmund"];
+
+        for(let i = 0; i < cities.length; i=i+1){
+            let value = cities[i];
+            if (value == "Köln"){
+                value = value + " ist hässlich";
+                cities[i] = value;
+                continue;
+            }
+            value = value + " ist schön";
+            cities[i] = value;
+        }
+        outp2.textContent = cities;
+
+        outp3.innerHTML = "wort1" + "<br>" + "wort2";
+        outp4.textContent = "wort1 \u0009 \u0009 wort2";
+        /* Frage: horizontal tabulator? */
+
+
+
+
+        console.log();
+    
+    </script>
+    
+</body>
+</html>

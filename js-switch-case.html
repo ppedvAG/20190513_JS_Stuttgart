@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch Case Default</title>
+</head>
+
+<body>
+    <h1>Switch Case Anweisung</h1>
+
+    <h3>Heute im Angebot</h3>
+    <p id="outToday"></p>
+
+    <h3>An anderen Tagen im Angebot</h3>
+    <input id="inp" type="text" placeholder="Wochentag" onkeypress="checkEnter(event)">
+    <button onclick="giveOffer()">OK</button>
+    <p id="outp"></p>
+
+    <script>
+        function checkEnter(ev){
+            if (ev.keyCode == 13) {
+                giveOffer();
+            }
+        }
+
+        function giveOffer() {
+            let userInput = inp.value;
+            switch (userInput) {
+                case "Montag":
+                    outp.textContent = "Pizza";
+                    break;
+                case "Dienstag":
+                    outp.textContent = "Pasta";
+                    break;
+                case "Mittwoch":
+                    outp.textContent = "Salat";
+                    break;
+                case "Donnerstag":
+                    outp.textContent = "Wurst";
+                    break;
+                case "Freitag":
+                    outp.textContent = "Pilzpfanne";
+                    break;
+                case "Samstag":
+                    outp.textContent = "Eintopf";
+                    break;
+                case "Sonntag":
+                    outp.textContent = "Kartoffelpuffer";
+                    break;
+                default:
+                    outp.textContent = "Ihre Eingabe entspricht keinem Wochentag";
+                    break;
+            }
+
+
+            
+        }
+        let d = new Date();
+        let today = d.getDay();
+        switch (today) {
+            case 1:
+                outToday.textContent = "Pizza";
+                break;
+            case 2:
+                outToday.textContent = "Pasta";
+                break;
+            case 3:
+                outToday.textContent = "Salat";
+                break;
+            case 4:
+                outToday.textContent = "Wurst";
+                break;
+            case 5:
+                outToday.textContent = "Pilzpfanne";
+                break;
+            case 6:
+                outToday.textContent = "Eintopf";
+                break;
+            case 0:
+                outToday.textContent = "Kartoffelpuffer";
+                break;
+            default:
+                outp.textContent = "irgendwas ist falsch gelaufen";
+                break;
+        }
+
+        
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS if else</title>
+    <style>
+        p {
+            width: 100px;
+            height: 100px;
+            border: thin dotted darkred;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="par" onmouseenter="mousehome = true; check()" onmouseleave="mousehome = false; check()"></p>
+    <script>
+        let mousehome; //boolean
+        function check() {
+            if (mousehome == true) {
+                par.textContent = "Maus ist drin!";
+                par.style.backgroundColor = "grey";
+
+            } else {
+                par.textContent = "Maus ist weg!";
+                par.style.backgroundColor = "brown";
+
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

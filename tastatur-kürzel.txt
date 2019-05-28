@@ -1,0 +1,8 @@
+shift alt f - formatieren
+strg # - kommentieren / kommentar entfernen (in JS einzeilig)
+shift alt a - kommentieren / kommentar entfernen
+shift alt Maus - spaltenweise Selektion
+strg s - speichern
+strg leertaste - intellisence aufrufen
+alt b - open in browser
+strg f - suchen & evtl ersetzen

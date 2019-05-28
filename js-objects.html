@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Objekte</title>
+</head>
+
+<body>
+    <!-- p#outp$*6 -->
+    <p id="outp1"></p>
+    <p id="outp2"></p>
+    <p id="outp3"></p>
+    <p id="outp4"></p>
+    <p id="outp5"></p>
+    <p id="outp6"></p>
+    <p id="outp7"></p>
+    <p id="outp8"></p>
+    <p>outp9</p>
+    <p id="outp9"></p>
+    <p>outp10</p>
+    <p id="outp10"></p>
+    <p id="outp11"></p>
+
+    <script>
+        /* Anonyme Objekte */
+        /* in geschw. Klammern alle Eigenschaften auflisten */
+
+        let personMax = {
+            vorname: "Max",
+            nachname: "Mustermann",
+            getName: function () {
+                return this.vorname + " " + this.nachname;
+            }
+        }
+        console.log(outp1);
+
+        outp1.textContent = "personMax.vorname: " + personMax.vorname;
+        outp2.textContent = 'personMax["vorname"]: ' + personMax["vorname"];
+        outp3.textContent = "personMax.getName: " + personMax.getName;
+        outp4.textContent = "personMax.getName(): " + personMax.getName();
+
+
+        /* Objekte mit Konstruktoren anlegen */
+        function Address(argStreet, argHousenr) {
+            this.propStreet = argStreet;
+            this.propHousenr = argHousenr;
+        }
+        /* ohne this. wird leeres Objekt angelegt */
+        /* function Address(argStreet, argHousenr) {
+            propStreet = argStreet;
+            propHousenr = argHousenr;
+        }
+        let someAddr = new Address("straße", 23);
+        console.log("someAddr");
+        console.log(someAddr); */
+
+        let maxAddress = new Address("Hauptstraße", 12);
+        outp5.textContent = "maxAddress.propStreet: " + maxAddress.propStreet;
+
+        /* Objekte dynamisch erweitern */
+        maxAddress.zipCode = 74426;
+
+        console.log("maxAddress instanceof Address: " + maxAddress instanceof Address);//true
+        //fertigesObjekt.neueEigenschaft = wertDieserEigenschaft;
+        outp6.textContent = "maxAddress.zipCode: " + maxAddress.zipCode;
+
+        personMax.address = maxAddress;
+        outp7.textContent = "personMax.address" + personMax.address;
+        outp8.textContent = "personMax.address.propStreet" + personMax.address.propStreet;
+       
+        /* with(DasWasWirNichtWiederholenWollen){ */
+        with(personMax.address) {
+            outp9.textContent = propStreet + " " + propHousenr + ", " + zipCode;
+        }
+
+        /* for(iterator-variable in object) */
+        for (let i in personMax){
+            outp10.textContent = outp10.textContent + " | " + i + ": " + personMax[i];
+            /* Kürzer: */
+            //outp10.textContent += " | " + i + ": " + personMax[i];
+
+        }
+
+        /* for ( in )  Übung*/
+        for (let i in personMax.address){
+            outp11.textContent = outp11.textContent + " | " + i + ": " + personMax.address[i];
+        }
+
+
+        /* Übung */
+        function Person(vorname, nachname, adresse) {
+            this.vorname = vorname;
+            this.nachname = nachname;
+            this.adresse = adresse;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

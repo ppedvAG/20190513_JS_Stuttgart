@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inline Block Elemente</title>
+    <style>
+        /* 1. Breite */
+        * {
+            border: 1px solid black;
+        }
+
+        /* solid - eine einfache Linie */
+        /* * - Universalselektor */
+
+        /* 2. Größenangaben*/
+        .bsp2 {
+            width: 100px;
+            height: 100px;
+        }
+        
+
+        /* 3. Box-Modell */
+        .bsp3 {
+            margin: 10px 10px 10px 10px;
+            /* oder ausführlich: */
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+
+        /* 4. inline-block */
+        .bsp4 {
+            display: inline-block;
+            width: 300px;
+            height: 100px;
+        }
+        
+        
+
+    </style>
+</head>
+
+
+<body>
+    <!--  -->
+    <!--  -->
+    <h3>1. Breite</h3>
+    <p>Block-Elemente sind so breit wie möglich</p>
+    <p>p - paragraph</p>
+    <p>p - paragraph</p>
+    <p>Inline-Elemente sind so breit wie nötig</p>
+    <span>span</span>
+    <span>span</span>
+
+    <h3>2. Größenangaben</h3>
+    <p>Block-Elemente akzeptieren Größenangaben</p>
+    <p class="bsp2">p - paragraph</p>
+    <p class="bsp2">p - paragraph</p>
+    <p>Inline-Elemente ignorieren Größenangaben</p>
+    <span class="bsp2">span</span>
+    <span class="bsp2">span</span>
+
+    <h3>3. Box-Modell</h3>
+    <p>Funktioniert sowohl bei Block- als auch bei Inline-Elementen</p>
+    <p>Inline-Elemente ignorieren margin-top und margin-bottom</p>
+    <p class="bsp3">p - paragraph</p>
+    <p class="bsp3">p - paragraph</p>
+    <span class="bsp3">span</span>
+    <span class="bsp3">span</span>
+
+    <h4>4. Vorteile von Inline- & Block-Elementen</h4>
+    <p>Ohne Größenangaben sehen aus wie inline-El</p>
+    <p class="bsp4">p - paragraph</p>
+    <p class="bsp4">p - paragraph</p>
+    <span class="bsp4">span</span>
+    <span class="bsp4">span</span>
+
+
+    <script>
+        /*  */
+    </script>
+
+</body>
+
+</html>

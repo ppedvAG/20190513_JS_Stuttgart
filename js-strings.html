@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Zeichenketten</title>
+</head>
+<body>
+    <h3>Grundlagen</h3>
+    <p id="outp"></p>
+
+    <h3>Template Strings</h3>
+    <p id="outp8"></p>
+    <p id="outp9"></p>
+
+    <!-- (h3{$. Methode}+p#outp$)*9 -->
+    <h3>Methode 1 charAt(index_als_number)</h3>
+    <p>Buchstaben werden nummeriert mit 0</p>
+    <p id="outp1"></p>
+
+    <h3>Methode 2 indexOf(gesuchtes_string)</h3>
+    <p id="outp2"></p>
+
+    <h3>Methode 3 slice(von_als_number, bis_als_number)</h3>
+    <p id="outp3"></p>
+
+    <h3>Methode 4 substr(von_als_number, wie_viele_als_number)</h3>
+    <h3>Methode 4 substr(von_als_number)</h3>
+    <p id="outp4"></p>
+    <p id="outp4_1"></p>
+
+    <h3>Methode 5 split("")</h3>
+    <p id="outp5"></p>
+
+    <h3>Methode 6 toUpperCase()</h3>
+    <p id="outp6"></p>
+
+    <h3>Methode 7 concat(hinzufügendes_string)</h3>
+    <p id="outp7"></p>
+
+
+    <!-- Übung -->
+    <h3>Password confirm</h3>
+
+    <script>
+        /* bisher gehabt */
+
+        let zk1 = "irgendwer123";
+        let zk2 = 'irgendwas123';
+
+        /* mit Konstruktor */
+        /* emfohlen wird aber die erste Variante */
+        let zk1MitKonstr = new String("irgendwasMK");
+
+        outp.textContent = "Datentyp von zk1: " + typeof zk1 + " " + ". Datentyp von zk1MitKonstr: " + typeof zk1MitKonstr;
+        
+        /* Template strings */
+        let zk3 = zk1 + " macht " + zk2;
+        let zk3Template = `${zk1} macht ${zk2}`;
+        outp8.textContent = zk3;
+        outp9.textContent = zk3Template;
+
+        
+        //
+        outp1.textContent = "zk1.charAt(3): " + zk1.charAt(3); //e
+        outp2.textContent = "zk1.indexOf('e'): " + zk1.indexOf('e'); //3
+        outp3.textContent = "zk3.slice(13,18): " + zk3.slice(13,18);
+        outp4.textContent = "zk3.substr(13,5): " + zk3.substr(13,5);
+        for (let el in zk3) {
+            outp4_1.innerHTML += el + ". " + zk3[el]+ '<br>';  
+        }
+        outp5.textContent = "zk1.split(''): " + zk1.split(''); // i,r,g,e,n,d,w,e,r,1,2,3
+        outp6.textContent = "zk1.toUpperCase(): " + zk1.toUpperCase();
+        outp7.textContent = "zk1.concat(zk2): " + zk1.concat(zk2);
+
+    
+    </script>
+    
+</body>
+</html>

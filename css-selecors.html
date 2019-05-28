@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Selektoren</title>
+    <style>
+        /* Universalselektor */
+        /* * {
+            color: red;
+        } */
+
+        /* Tag-Selektor */
+        /* p {
+            color: red;
+        } */
+
+        /* Klassen-Selektor */
+        /* .pClass {
+            color: red;
+        } */
+
+        /* ID-Selektor */
+        /* #pId {
+            color: red;
+        } */
+        /* IDs nur einmal vergeben. Wichtig fürs Verlinken und JS-Selektieren */
+
+        /* KOMBINATOREN */
+        /* Auflistung */
+        /* h3, a {
+            color: red;
+        } */
+
+        /* Geschwister-Selektor */
+        /* nur Paragraphen direkt nach Anker-Links */
+         /* a + p {
+            color: red;
+        } */
+
+        /* Eltern-Kind-Selektor */
+        /* selektiert auch Enkelkinder */
+        /* div p {
+            color: red;
+        } */
+        /* selektiert nur unmittelbare Kinder */
+        /* div > p {
+            color: red;
+        } */
+
+        /* Attribut-Selektor */
+        /* *[onclick] {} */
+        /* oder: */
+        /* [onclick] {
+            color: red;
+        } */
+
+        /* PSEUDOSELEKTOREN */
+        /* Pseudoklassen */
+        /* p:hover {
+            color: red;
+        } */
+
+        /* Pseudoelemente */
+        /* p::first-letter {
+            color: red;
+        } */
+
+        /* not()-Selektor */
+        /* p:not(#pId) {
+            color: red;
+        } */
+
+        /* NTH-Selektoren */
+        /* selektiert nur die Paragraphen, die innerhalb ihrer Eltern drittes Kind sind*/
+        /* p:nth-child(3) {
+            color: red;
+        } */
+        /* selektiert die Paragraphen, die innerhalb ihrer Eltern drittes Kind ihrer Art sind*/
+        p:nth-of-type(3){
+            color: red;
+        }
+    </style>
+</head>
+text in html
+
+<body>
+    text in body
+    <div>
+        <h3>Heading h3</h3>
+        <p id="pId">Paragraph</p>
+        <p onclick="myFunction()">Paragraph</p>
+        <article>
+            <p>Par in div in div</p>
+        </article>
+        <p class="pClass">Paragraph</p>
+        <p>Paragraph</p>
+    </div>
+    <a href="#" onclick="myFunction()">Anker-Link</a>
+    <p>Paragraph 1 außerhalb von div</p>
+    <p class="pClass">Paragraph 2 außerhalb von div</p>
+
+</body>
+<script>
+    document.ge
+
+</script>
+
+</html>

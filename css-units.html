@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Größen</title>
+    <style>
+        div {
+            border: thin solid lightcoral;
+        }
+        #pixel {
+            font-size: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #prozent {
+            font-size: 10%;
+            padding: 10%;
+            border-radius: 10%;
+        }
+        body {
+            font-size: 20px;
+        }
+        #em {
+            font-size: 1em;
+            padding: 1em;
+            border-radius: 1em;
+        }
+        html {
+            font-size: 40px;
+        }
+        #rem {
+            font-size: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+        #vw {
+            font-size: 1vw;
+            padding: 1vw;
+            border-radius: 1vw;
+        }
+        #vh {
+            font-size: 1vh;
+            padding: 1vh;
+            border-radius: 1vh;
+        }
+        #vmin {
+            font-size: 1vmin;
+            padding: 1vmin;
+            border-radius: 1vmin;
+        }
+        #vmax {
+            font-size: 1vmax;
+            padding: 1vmax;
+            border-radius: 1vmax;
+        }
+        /* fraction */
+        #gridcontainer {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            /* 25% 50% 25% */
+            grid-gap: 1vmin;
+
+
+        }
+        #gridcontainer div {
+            background-color:lightsteelblue;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- (div[id=""]>h1+p{lorem10})*8 -->
+    <div id="pixel">
+        <h1>pixel</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, soluta?</p>
+    </div>
+    <div id="prozent">
+        <h1>prozent</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, consequuntur.</p>
+    </div>
+    <div id="em">
+        <h1>em</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ex?</p>
+    </div>
+    <div id="rem">
+        <h1>rem - root em</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, quibusdam!</p>
+    </div>
+    <div id="vw">
+        <h1>vw - viewport width</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, ab?</p>
+    </div>
+    <div id="vh">
+        <h1>vh - viewport height</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, expedita.</p>
+    </div>
+    <div id="vmin">
+        <h1>vmin</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, sit?</p>
+    </div>
+    <div id="vmax">
+        <h1>vmax</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, culpa.</p>
+    </div>
+
+    <h1>fraction</h1>
+    <div id="gridcontainer">
+        <div>div in grid</div>
+        <div>div in grid</div>
+        <div>div in grid</div>
+    </div>
+    
+</body>
+</html>

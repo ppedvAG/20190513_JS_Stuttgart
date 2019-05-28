@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Arrays</title>
+</head>
+<body>
+   <!-- (h3{$. Methode}+p#outpM$+p#outpA$)*10 -->
+   <h3>Property length</h3>
+   <p id="outp"></p>
+
+   <h3>Datentyp von Array</h3>
+   <p id="outp2"></p>
+
+   <h3>ist eine Variable ein Array? instanceof</h3>
+   <p id="outp3"></p>
+
+   <h3>1. Methode array.concat(array), RW: neues Array aus 2 alten </h3>
+   <p id="outpM1"></p>
+   <p id="outpA1"></p>
+
+   <h3>2. Methode join("trennzeichen"), RW: </h3>
+   <p id="outpM2"></p>
+   <p id="outpA2"></p>
+
+   <h3>3. Methode toString(), RW: </h3>
+   <p id="outpM3"></p>
+   <p id="outpA3"></p>
+
+   <h3>4. Methode indexOf(element), RW: </h3>
+   <p id="outpM4"></p>
+   <p id="outpA4"></p>
+
+   <h3>5. Methode unshift(element), RW: </h3>
+   <p id="outpM5"></p>
+   <p id="outpA5"></p>
+
+   <h3>6. Methode shift(), RW: </h3>
+   <p id="outpM6"></p>
+   <p id="outpA6"></p>
+
+   <h3>7. Methode push(element), RW: neue Anzahl von Elementen</h3>
+   <p>fügt neues Element an der letzten Stelle hinzu</p>
+   <p id="outpM7"></p>
+   <p id="outpA7"></p>
+
+   <h3>8. Methode pop(), RW: letztes Element</h3>
+    <p>löscht letztes Element</p>
+   <p id="outpM8"></p>
+   <p id="outpA8"></p>
+
+   <h3>9. Methode splice(index, index?), RW: der abgeschnittene Rest als Array</h3>
+   <p>mit einem Argument wird angegeben Anzahl von Elementen im Array gelassen, Rest gelöscht</p>
+   <p id="outpM9"></p>
+   <p id="outpA9"></p>
+
+   <h3>10. Methode reverse(), RW: rückwärts aufgelistete Elemente als Array</h3>
+   <p>ändert die Reihenfolge von Elementen im Array </p>
+   <p id="outpM10"></p>
+   <p id="outpA10"></p>
+
+   <h3>11. Methode map(function), RW: neues Array mit RW der Argumentfunktion</h3>
+   <p>angegeben Funktion wird an jedem Element ausgeführt</p>
+   <p>map zu dt abbilden, gestalten...</p>
+   <p id="outpM11"></p>
+   <p id="outpA11"></p>
+
+    <script>
+        /* array zu dt: anordnung, in comp und math: feld */
+        /* Array ohne Konstruktor */
+        let cities1 = ["Stuttgart", "Köln", "Berlin", "Dortmund"];
+
+        /* Array mit Konstruktor - Var. 1 */
+        let cities2 = new Array(3);
+        cities2[0] = "Düsseldorf";
+        cities2[1] = "Koblenz";
+        cities2[2] = "Salzburg";
+
+        /* Array mit Konstruktor - Var. 2 */
+        let cities3 = new Array("Bonn", "Baden-Baden");
+
+        /* Array mit benannten Elementen (assoziativen Feldern)*/
+        let filialien = new Array();
+        filialien["Hauptsitz"] = "Burghausen";
+        filialien["FilialeOesterreich"] = "Wien";
+        filialien["BusinessCenter1"] = "Stuttgart";
+        console.log(filialien);//0
+        console.log(filialien.length);//0
+        console.log(filialien instanceof Array); //true
+
+
+
+
+
+        outp.textContent = cities1.length;
+        outp2.textContent = typeof cities1;
+        outp3.textContent = cities1 instanceof Array;
+
+        outpM1.textContent = cities1.concat(cities2);
+        outpA1.textContent = cities1; //array bleibt aber unverändert
+
+        outpM2.textContent = "";
+        outpA2.textContent = "";
+
+        outpM3.textContent = "";
+        outpA3.textContent = "";
+
+        outpM4.textContent = "";
+        outpA4.textContent = "";
+
+        outpM5.textContent = "";
+        outpA5.textContent = "";
+
+        outpM6.textContent = "";
+        outpA6.textContent = "";
+
+        outpM7.textContent = cities1.push("Potsdam");
+        outpA7.textContent = cities1;
+
+        outpM8.textContent = cities1.pop();
+        outpA8.textContent = cities1;
+
+        outpM9.textContent = cities1.splice(2);
+        outpA9.textContent = cities1;
+
+        outpM10.textContent = "";
+        outpA10.textContent = "";
+
+        outpM11.textContent = cities1.map(function(el){return el.length});
+        outpA11.textContent = cities1;
+
+        /* iterator für Arrays */
+        /* for (let iterator of array){
+            ...
+        } */
+
+
+
+
+
+
+
+
+    
+    
+    </script>
+    
+</body>
+</html>

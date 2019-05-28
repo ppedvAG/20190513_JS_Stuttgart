@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Regular Expressions</title>
+</head>
+<body>
+    <h3>regexp.test()</h3>
+    <p id="out1"></p>
+    <h3>regexp.exec()</h3>
+    <p id="out2"></p>
+    <p id="out3"></p>
+    <p id="out4"></p>
+    <script>
+        /* Grundlagen  */
+        let reg = new RegExp("a+");
+        let reg1 = /a+/gi;
+        let text = "Hallo an Alle in Aachen";
+        if (reg1.test(text)){
+            out1.textContent = "ein a/A wurde gefunden";
+        } else {
+            out1.textContent = "kein Resultat";
+        }
+        /* Treffer prüfen */
+        let results = [];
+        results = reg1.exec(text);
+        while(results){
+            out2.innerHTML += results[0] + "<br>";
+            results = reg1.exec(text);
+        }
+
+        /* String.replace(RegExp) */
+        let reg2 = /(\w+)\s(\w+)/;
+        let text2 = "Max Mustermann";
+        out3.textContent = text2.replace(reg2, "$2, $1");
+
+    
+    </script>
+
+
+    
+</body>
+</html>

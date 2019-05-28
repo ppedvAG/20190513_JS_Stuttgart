@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TS-Grundlagen</title>
+    <style>
+        /* Turn Off Number Input Spinners in mozilla */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        #counter {
+            font-style: oblique;
+            border: thin solid grey;            
+        }
+        #gridcontainer {
+            display: grid;
+            grid-template-columns: 60% 40%;
+        }
+        #griditem2 {
+            justify-self: center;
+        }
+        #flexcontainer {
+            display: flex;
+            border: blue solid;
+            /* justify-content: space-between; */
+        }
+        .labelblock{
+            display: block;
+        }
+        .flexitem {
+            border: pink solid;
+            /* margin-left: 20px; */
+            margin-right: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gridcontainer">
+        <fieldset>
+            <legend>ANMELDUNG</legend>
+            <div id="flexcontainer">
+                <div class="flexitem"><label class="labelblock" for="">FIRSTNAME</label>
+                    <input type="text" required></div>
+
+                <div class="flexitem"><label class="labelblock" for="">LASTNAME</label>
+                    <input type="text" required></div>
+                
+            </div>
+            <div>
+                <label for="">ALTER</label>
+                <input type="number" onkeyup=checkInput(event) min="5" max="99" required>
+            </div>
+            <button id="btn" type="button" onclick="myFirstTsFct()"></button>
+        </fieldset>
+        <div id="griditem2">
+            <h3>Teilnehmeranzahl, max:5</h3>
+            <p id="counter">0</p>
+        </div>
+
+    </div>
+
+    <p id="out"></p>
+    <h2>Teilnehmerliste</h2>
+    <ul id="teilnehmer"></ul>
+
+
+    <script src="ts-basics.js"></script>
+</body>
+
+</html>

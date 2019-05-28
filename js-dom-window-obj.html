@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM window</title>
+</head>
+<body>
+    <!-- (h3{$. Methode}+button[onclick=""]{demonstrate})*5 -->
+    <h3>1. Methode alert()</h3>    
+    <button onclick="alert('Methode alert ist hier')">demonstrate</button>
+
+    <h3>2. Methode prompt()</h3>
+    <button onclick="demonstratePrompt()">demonstrate</button>
+    <p id="outp2"></p>
+
+    <h3>3. Methode confirm()</h3>
+    <button onclick="demonstrateConfirm()">demonstrate</button>
+    <p id="outp3"></p>
+
+    <h3>4. Methode setTimeout()</h3>
+    <button onclick="setTimeout('alert(`erschienen nach 2 sek`)',2000)">demonstrate</button>
+    <!-- setTimeout(arg1_function_als_string, arg2_millisekunden_als_number) -->
+
+    <h3>5. Methoden setInterval() & clearInterval()</h3>
+    <!-- setInterval(arg1_function_als_string, arg2_millisekunden_als_number) -->
+    <button onclick="demonstrateSetInterval()">demonstrateSetInt</button>
+    <button onclick="clearInterval(rwSetInt)">demonstrateClearInt</button>
+
+    <script>
+        function demonstratePrompt(){
+            //let jahre = window.prompt("Geben Sie Ihr Alter an:");
+            //outp2.textContent = jahre;
+            /* oder kürzer: */
+            outp2.textContent = window.prompt("Geben Sie Ihr Alter an:");
+        }
+
+        function demonstrateConfirm(){
+            outp3.textContent = confirm("Drücke auf OK");
+        }
+        
+        function demonstrateSetInterval(){
+            rwSetInt = setInterval('confirm(`erschienen jede 2 sek`)',3000);
+            /* mit var rwSetInt hat nicht funktioniert. was ist GültBer von var in functions? */
+        }
+        console.log(rwSetInt);
+    </script>
+    
+</body>
+</html>

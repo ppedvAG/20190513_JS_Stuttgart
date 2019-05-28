@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Cookies</title>
+</head>
+
+<body>
+    <p id="out1"></p>
+    <p id="out2"></p>
+    <p id="out3"></p>
+    <p id="out4"></p>
+    <p id="out5"></p>
+    <p id="out6"></p>
+    <p id="out7"></p>
+
+
+    <script>
+        //nachschauen in Web-Speicher im Developer Tool
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            out1.textContent = d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            out2.textContent = expires; //expires=Fri, 17 May 2019 14:18:22 GMT
+            var myCookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            out3.textContent = myCookie;
+            document.cookie = myCookie;
+        }
+        setCookie("language", "de", 2);
+        
+        console.log(document.cookie); //string 
+
+        //language=de;expires=Fri, 17 May 2019 14:32:25 GMT;path=/
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            var user = getCookie("username");
+            if (user != "") {
+                alert("Welcome again " + user);
+            } else {
+                user = prompt("Please enter your name:", "");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 365);
+                }
+            }
+        }
+        checkCookie();
+    </script>
+
+</body>
+
+</html>
